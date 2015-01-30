@@ -5,6 +5,7 @@ package com.olegchir.fadeok.init;
  * see LICENSE-2.0.txt, LICENSE (it's a copy of LICENSE-2.0.txt) and NOTICE for additional information.
  */
 
+import org.apache.tiles.extras.complete.CompleteAutoloadTilesListener;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -31,12 +32,16 @@ public class AppInitializer implements WebApplicationInitializer {
         applicationContext.setConfigLocation(CONFIG_LOCATION);
 
         servletContext.addListener(new ContextLoaderListener(applicationContext));
+//        servletContext.addListener(new CompleteAutoloadTilesListener());
 
         // Add the servlet mapping manually and make it initialize automatically
         DispatcherServlet dispatcherServlet = new DispatcherServlet(applicationContext);
         ServletRegistration.Dynamic servlet = servletContext.addServlet("mvc-dispatcher", dispatcherServlet);
+
         servlet.addMapping("/");
         servlet.setAsyncSupported(true);
         servlet.setLoadOnStartup(1);
+
+
     }
 }

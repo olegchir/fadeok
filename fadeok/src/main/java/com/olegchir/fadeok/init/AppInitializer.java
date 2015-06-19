@@ -23,7 +23,6 @@ public class AppInitializer implements WebApplicationInitializer {
 
     private static final String CONFIG_LOCATION = "com.olegchir.fadeok.config";
 
-    @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         System.out.println("Initializing Application for " + servletContext.getServerInfo());
 
@@ -41,7 +40,5 @@ public class AppInitializer implements WebApplicationInitializer {
         servlet.addMapping("/");
         servlet.setAsyncSupported(true);
         servlet.setLoadOnStartup(1);
-
-
     }
 }

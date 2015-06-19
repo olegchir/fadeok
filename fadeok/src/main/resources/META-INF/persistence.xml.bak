@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
-    <persistence-unit name="userlinks">
+    <persistence-unit name="fadeok">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <!-- Scan for annotated classes and Hibernate mapping XML files -->

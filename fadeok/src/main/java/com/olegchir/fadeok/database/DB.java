@@ -15,6 +15,11 @@ import javax.persistence.Persistence;
  * Created by olegchir on 27.12.14.
  */
 public class DB {
+
+    public static EntityManager getEntityManager() {
+        return Persistence.createEntityManagerFactory("fadeok").createEntityManager();
+    }
+
     public static void executeInTransaction(Transactable ops) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("fadeok");
         EntityManager em = emf.createEntityManager();

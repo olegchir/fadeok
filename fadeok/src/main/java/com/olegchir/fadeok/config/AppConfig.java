@@ -10,17 +10,18 @@ package com.olegchir.fadeok.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
-import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
+
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.olegchir")
+@ComponentScan(basePackages = {"com.olegchir"})
+//@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class AppConfig extends WebMvcConfigurerAdapter {
 //    @Bean
 //    public UrlBasedViewResolver setupViewResolver() {
@@ -53,4 +54,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         tilesViewResolver.setOrder(2);
         return tilesViewResolver;
     }
+
+
 }
